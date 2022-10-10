@@ -15,8 +15,8 @@ public class TipCalculator {
         return totalBillBeforeTip;
     }
 
-    public int getTipPercentage() {
-        return tipPercentage;
+    public double getTipPercentage() {
+        return tipPercentage/100;
     }
 
     public void addMeal(double cost) {
@@ -24,7 +24,7 @@ public class TipCalculator {
     }
 
     public double tipAmount() {
-        return totalBillBeforeTip*tipPercentage;
+        return totalBillBeforeTip*getTipPercentage();
     }
 
     public double totalBill() {
