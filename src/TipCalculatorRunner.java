@@ -27,13 +27,13 @@ public class TipCalculatorRunner {
 
         DecimalFormat decFormat = new DecimalFormat("\u00a4#,##0.00");
 
-        System.out.println("Total Bill Before Tip: " + tipCal.getTotalBillBeforeTip());
+        System.out.println("Total Bill Before Tip: " + decFormat.format(tipCal.getTotalBillBeforeTip()));
         System.out.println("Tip Percentage: " + tipCal.getTipPercentage());
-        System.out.println("Total tip: " + tipCal.tipAmount());
-        System.out.println("total Tip with Bill: " + tipCal.totalBill());
-        System.out.println("Per Person cot Before tip:" + tipCal.perPersonCostBeforeTip());
-        System.out.println("Tip Per Person: " + tipCal.perPersonTipAmount());
-        System.out.println("Total Cost Per Person: " + tipCal.perPersonTotalCost());
+        System.out.println("Total tip: " + decFormat.format(tipCal.tipAmount()));
+        System.out.println("total Tip with Bill: " + decFormat.format(tipCal.totalBill()));
+        System.out.println("Per Person cot Before tip:" + decFormat.format(tipCal.perPersonCostBeforeTip()));
+        System.out.println("Tip Per Person: " + decFormat.format(tipCal.perPersonTipAmount()));
+        System.out.println("Total Cost Per Person: " + decFormat.format(tipCal.perPersonTotalCost()));
 
     }
 }

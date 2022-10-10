@@ -16,7 +16,7 @@ public class TipCalculator {
     }
 
     public double getTipPercentage() {
-        return tipPercentage/100;
+        return tipPercentage/100.00;
     }
 
     public void addMeal(double cost) {
