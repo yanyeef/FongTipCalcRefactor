@@ -9,18 +9,14 @@ public class TipCalculatorRunner {
         System.out.print("How many people are in your group? ");
         int numPpl = scan.nextInt();
         TipCalculator tipCal = new TipCalculator(numPpl, tipPer);
-
-        System.out.print("Enter a cost in dollars and cents, e.g. 12.50 (-1 to end): $");
-        double cost = scan.nextDouble();
-        tipCal.addMeal(cost);
-        do {
-            if (cost != -1) {
-                System.out.print("Enter a cost in dollars and cents, e.g. 12.50 (-1 to end): $");
-                cost = scan.nextDouble();
-                tipCal.addMeal(cost);
-            }
-        } while (cost != -1);
+        double cost = 0;
+        while (!(cost == -1)) {
+            System.out.print("Enter a cost in dollars and cents, e.g. 12.50 (type -1 to end):$ ");
+            cost = scan.nextDouble();
+            tipCal.addMeal(cost);
+        }
         tipCal.addMeal(1.00);
+
 
 
 
@@ -28,7 +24,7 @@ public class TipCalculatorRunner {
         DecimalFormat decFormat = new DecimalFormat("\u00a4#,##0.00");
 
         System.out.println("Total Bill Before Tip: " + decFormat.format(tipCal.getTotalBillBeforeTip()));
-        System.out.println("Tip Percentage: " + tipCal.getTipPercentage());
+        System.out.println("Tip Percentage: " + tipPer);
         System.out.println("Total tip: " + decFormat.format(tipCal.tipAmount()));
         System.out.println("total Tip with Bill: " + decFormat.format(tipCal.totalBill()));
         System.out.println("Per Person cot Before tip:" + decFormat.format(tipCal.perPersonCostBeforeTip()));
